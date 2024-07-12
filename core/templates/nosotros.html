@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center">Nosotros</h2>
+
+    <div class="row my-4">
+        <div class="col-md-6">
+            <img src="{% static 'img/NuestroTaller.jpg' %}" class="img-fluid rounded" alt="Nuestro taller">
+        </div>
+        <div class="col-md-6">
+            <h3>¿Quiénes Somos?</h3>
+            <p>
+                Somos un taller mecánico dedicado a proporcionar servicios de mantenimiento y reparación de vehículos con un alto estándar de calidad y profesionalismo. Desde nuestros inicios, nos hemos comprometido a mantener la satisfacción y confianza de nuestros clientes.
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-md-6 order-md-2">
+            <h3>Misión</h3>
+            <p>
+                Nuestra misión es ser reconocidos como el taller mecánico de referencia en nuestra comunidad, ofreciendo servicios confiables y eficientes que garanticen la seguridad y el buen funcionamiento de los vehículos de nuestros clientes.
+            </p>
+        </div>
+        <div class="col-md-6 order-md-1">
+            <img src="{% static 'img/Mision.jpg' %}" class="img-fluid rounded" alt="Misión">
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-md-6">
+            <img src="{% static 'img/Vision.jpg' %}" class="img-fluid rounded" alt="Visión">
+        </div>
+        <div class="col-md-6">
+            <h3>Visión</h3>
+            <p>
+                Queremos expandir nuestra presencia y capacidad operativa para convertirnos en líderes regionales en servicios automotrices, manteniendo siempre nuestro compromiso con la excelencia y la satisfacción del cliente.
+            </p>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-md-12 text-center">
+            <h3>Nuestro Dueño</h3>
+            <p>Conoce a la persona detrás de nuestro éxito:</p>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <img src="{% static 'img/DuenoTaller.jpg' %}" class="img-fluid rounded-circle" alt="Dueño del taller">
+                    <h5 class="mt-2">Cristiano Ronaldo</h5>
+                    <p>Dueño y Fundador
+                        de Mcqueen
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

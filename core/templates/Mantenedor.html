@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center">Mantenedor de Productos</h2>
+    
+    <!-- Aquí puedes agregar el formulario para agregar productos -->
+    <div class="my-4">
+        <h3>Agregar Producto</h3>
+        <!-- Formulario para agregar un nuevo producto -->
+        <form method="POST" action="{% url 'agregar_producto' %}">
+            {% csrf_token %}
+            <!-- Campos del formulario -->
+            <div class="mb-3">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" class="form-control" step="0.01" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Producto</button>
+        </form>
+    </div>
+
+    <!-- Aquí puedes listar todos los productos -->
+    <div class="my-4">
+        <h3>Lista de Productos</h3>
+        <ul class="list-group">
+            {% for producto in productos %}
+            <li class="list-group-item">
+                <strong>{{ producto.nombre }}</strong>
+                <p>{{ producto.descripcion }}</p>
+                <p>Precio: {{ producto.precio }}</p>
+                <!-- Enlaces para actualizar y eliminar productos -->
+                <a href="{% url 'actualizar_producto' producto.id %}" class="btn btn-sm btn-primary">Actualizar</a>
+                <a href="{% url 'eliminar_producto' producto.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+            </li>
+            {% empty %}
+            <li class="list-group-item">No hay productos disponibles.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

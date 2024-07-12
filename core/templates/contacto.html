@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Contacto</h2>
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="region" class="form-label">Región</label>
+                    <select class="form-control" id="region" name="region" required>
+                        <option value="">Selecciona una región</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="address" name="address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    fetch('https://api.shipit.cl/v/regions')
+       .then(response => response.json())
+       .then(regions => {
+            const selectRegion = document.getElementById('region');
+            regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region.id;
+                option.text = region.name;
+                selectRegion.appendChild(option);
+            });
+        });
+</script>
+{% endblock %}

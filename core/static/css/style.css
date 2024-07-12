@@ -1,0 +1,187 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ce0202; /* Cambiado a rojo */
+    color: #dd6e06;
+    padding-top: 0px; /* Para el espacio del navbar */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ff0000;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+.navbar-nav .nav-link.username {
+    font-weight: bold;
+    color: #ff5733; /* Color del nombre del usuario */
+}
+
+/* Footer */
+.footer {
+    background-color: #ff0000;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.footer h5 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffc107;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #004488;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #23272b;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 0;
+    background-color: #797272;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #ffc107;
+    box-shadow: none;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+/* Card */
+.card.card-body{
+    border-radius: 0;
+    border: 1px solid #ced4da;
+    background-color: #c6cdd1;
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #c6cdd1;
+}
+
+.card-footer.text-center{
+    background-color: #82878b;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    color: #f70000;
+}
+
+/* Containers */
+.container {
+    margin-top: 0px;
+   
+}
+
+/* Utility Classes */
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+    
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.py-1 {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.py-3 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+/* Custom Classes */
+.username {
+    color: #ff5733; /* Color del nombre del usuario */
+    font-weight: bold;
+}
+
+.test{
+    background: rgb(255, 0, 0);
+    background: radial-gradient(circle, rgba(197,204,212,1) 0%, rgba(240, 3, 3, 0.937) 0%, rgb(255, 3, 3) 50%, rgb(255, 0, 0) 100%);
+    color: white;
+}

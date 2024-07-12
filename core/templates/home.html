@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="jumbotron text-center bg-dark text-white mb-5">
+        <h1 class="display-4">Bienvenido a Talleres Mcqueen</h1>
+        <p class="lead">Ofrecemos servicios de mantenimiento y reparación con expertos comprometidos con la calidad y el rendimiento de tu vehículo.</p>
+        <a class="btn btn-outline-light btn-lg" href="{% url 'contact' %}" role="button">Contáctanos</a>
+    </div>
+
+    <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'img/carrusel1.jpg' %}" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Mantenimiento Preventivo</h5>
+                    <p>Servicios de mantenimiento para garantizar el funcionamiento óptimo de tu vehículo.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel2.jpg' %}" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Reparación Especializada</h5>
+                    <p>Reparamos cualquier tipo de avería con técnicas y herramientas avanzadas.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'img/carrusel3.jpg' %}" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Diagnóstico Avanzado</h5>
+                    <p>Utilizamos equipos modernos para diagnosticar y solucionar problemas de manera precisa.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+    <div class="row my-5">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'img/Carta1.jpeg' %}" class="card-img-top" alt="Mantenimiento Preventivo" onclick="toggleDetails(this)">
+                <div class="card-body">
+                    <h5 class="card-title">Mantenimiento Preventivo</h5>
+                    <p class="card-text" style="display: none;">Garantiza la durabilidad y rendimiento de tu vehículo con nuestro servicio especializado.</p>
+                    <a href="#" class="btn btn-dark" onclick="toggleDetails(this); return false;">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'img/Carta2.jpg' %}" class="card-img-top" alt="Reparación Especializada" onclick="toggleDetails(this)">
+                <div class="card-body">
+                    <h5 class="card-title">Reparación Especializada</h5>
+                    <p class="card-text" style="display: none;">Solucionamos averías con precisión y utilizando repuestos de calidad.</p>
+                    <a href="#" class="btn btn-dark" onclick="toggleDetails(this); return false;">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'img/Carta3.jpg' %}" class="card-img-top" alt="Diagnóstico Avanzado" onclick="toggleDetails(this)">
+                <div class="card-body">
+                    <h5 class="card-title">Diagnóstico Avanzado</h5>
+                    <p class="card-text" style="display: none;">Detectamos y solucionamos problemas complejos con nuestra tecnología avanzada.</p>
+                    <a href="#" class="btn btn-dark" onclick="toggleDetails(this); return false;">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'img/Carta4.jpg' %}" class="card-img-top" alt="Reparación de Frenos" onclick="toggleDetails(this)">
+                <div class="card-body">
+                    <h5 class="card-title">Reparación de Frenos</h5>
+                    <p class="card-text" style="display: none;">Especialistas en mantenimiento y reparación de sistemas de frenado para tu seguridad.</p>
+                    <a href="#" class="btn btn-dark" onclick="toggleDetails(this); return false;">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'img/Carta5.jpg' %}" class="card-img-top" alt="Alineación y Balanceo" onclick="toggleDetails(this)">
+                <div class="card-body">
+                    <h5 class="card-title">Alineación y Balanceo</h5>
+                    <p class="card-text" style="display: none;">Servicios para mantener la estabilidad y control de tu vehículo en carretera.</p>
+                    <a href="#" class="btn btn-dark" onclick="toggleDetails(this); return false;">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'img/Carta6.jpg' %}" class="card-img-top" alt="Revisión de Motor" onclick="toggleDetails(this)">
+                <div class="card-body">
+                    <h5 class="card-title">Revisión de Motor</h5>
+                    <p class="card-text" style="display: none;">Diagnóstico exhaustivo y ajustes para mantener tu motor en óptimas condiciones.</p>
+                    <a href="#" class="btn btn-dark" onclick="toggleDetails(this); return false;">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleDetails(element) {
+        const card = element.closest('.card');
+        const text = card.querySelector('.card-text');
+        const button = card.querySelector('.btn');
+        if (text.style.display === 'none') {
+            text.style.display = 'block';
+            button.textContent = 'Ocultar detalles';
+        } else {
+            text.style.display = 'none';
+            button.textContent = 'Ver más';
+        }
+    }
+</script>
+{% endblock %}
